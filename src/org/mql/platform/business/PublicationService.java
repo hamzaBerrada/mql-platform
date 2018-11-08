@@ -6,6 +6,7 @@ import org.mql.platform.models.Activity;
 import org.mql.platform.models.Event;
 import org.mql.platform.models.News;
 
+
 public interface PublicationService {
 	public List<Activity> getAllActivities();
 	public List<Event> getAllEvents();
