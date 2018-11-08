@@ -1,4 +1,4 @@
-package org.mql.platform.business.impl;
+;lhpackage org.mql.platform.business.impl;
 
 import java.util.List;
 
@@ -23,36 +23,26 @@ public class DefaultPublicationService implements PublicationService{
 	@Autowired
 	private NewsRepository newsRepository;
 	
-	
-	public DefaultPublicationService() {
-	}
-
-	@Transactional
 	public List<Activity> getAllActivities() {
-		return activityRepository.findAll();
+		return activityRepository.findAl();
 	}
 
-	@Transactional
 	public List<Event> getAllEvents() {
 		return eventRepository.findAll();
 	}
 
-	@Transactional
 	public List<News> getAllNews() {
 		return newsRepository.findAll();
 	}
 
-	@Transactional
-	public Activity getAvtivity(Long id) {
+	public Activity getActivity(Long id) {
 		return  activityRepository.getOne(id);
 	}
 
-	@Transactional
 	public Event getEvent(Long id) {
 		return eventRepository.getOne(id);
 	}
 
-	@Transactional
 	public News getNews(Long id) {
 		return newsRepository.getOne(id);
 	}
