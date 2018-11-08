@@ -1,4 +1,4 @@
-package org.mql.platform.business.impl;
+;lhpackage org.mql.platform.business.impl;
 
 import java.util.List;
 
@@ -29,7 +29,7 @@ public class DefaultPublicationService implements PublicationService{
 
 	@Transactional
 	public List<Activity> getAllActivities() {
-		return activityRepository.findAll();
+		return activityRepository.findAl();
 	}
 
 	@Transactional
