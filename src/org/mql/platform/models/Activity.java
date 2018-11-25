@@ -10,9 +10,6 @@ import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-/**
- * @author mehdithe
- */
 @Entity
 public class Activity extends Publication {
 
