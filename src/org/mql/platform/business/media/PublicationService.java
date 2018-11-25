@@ -9,8 +9,6 @@ import org.mql.platform.models.News;
 /**
  * 
  * Service responsible for managing publications: activities, events and news
- * 
- * @author mehdithe
  *
  */
 

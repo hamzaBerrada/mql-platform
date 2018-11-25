@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,11 +15,18 @@
       font-family: Montserrat, sans-serif;
       font-size: 3rem;
     }
+    a{
+   	  font-family: Montserrat, sans-serif;
+      font-size: 2rem;
+      color :teal;
+    }
+    
   </style>
 </head>
 <body>
   <div class="container">
-    <h2>Hello Mql </h2>
+    <h2>HELLO MQL</h2>
+    <a href="demo">click here to test the controller :  HomeController</a>
   </div>
 </body>
 </html>
