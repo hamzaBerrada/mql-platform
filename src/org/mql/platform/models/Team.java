@@ -1,71 +1,58 @@
 package org.mql.platform.models;
 
+import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Set;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
 
 /**
- * @author mehdithe
+ * @author chermehdi
  */
 @Entity
 public class Team {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Integer id;
+  @EmbeddedId
+  private TeamId id;
 
-  @ManyToMany(mappedBy = "teams")
-  private Set<Student> students;
+  @ManyToMany
+  private Set<Student> members = new HashSet<>();
 
-  @ManyToMany(mappedBy = "teams")
-  private Set<Project> projects;
+  private LocalDate creationYear = LocalDate.now();
 
-  private String name;
+  public Team() {
+  }
 
-  @OneToOne
-  private Student teamLeader;
+  public Set<Student> getMembers() {
+    return members;
+  }
 
-  public Integer getId() {
+  public void setMembers(Set<Student> members) {
+    this.members = members;
+  }
+
+  public TeamId getId() {
     return id;
   }
 
-  public void setId(Integer id) {
+  public void setId(TeamId id) {
     this.id = id;
   }
 
-  public Set<Student> getStudents() {
-    return students;
-  }
-
-  public void setStudents(Set<Student> students) {
-    this.students = students;
-  }
-
-  public Set<Project> getProjects() {
-    return projects;
-  }
-
-  public void setProjects(Set<Project> projects) {
-    this.projects = projects;
-  }
-
   public String getName() {
-    return name;
+    return id.getName();
   }
 
   public void setName(String name) {
-    this.name = name;
+    this.id.setName(name);
   }
 
-  public Student getTeamLeader() {
-    return teamLeader;
+  public LocalDate getCreationYear() {
+    return creationYear;
   }
 
-  public void setTeamLeader(Student teamLeader) {
-    this.teamLeader = teamLeader;
+  public void setCreationYear(LocalDate year) {
+    this.creationYear = year;
   }
 }
